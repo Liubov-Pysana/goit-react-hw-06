@@ -12,7 +12,7 @@ const SearchBox = () => {
     };
 
     return (
-        <div className={css.SearchBox}>
+        <div className={css.searchBox}>
             <p>Find contacts by name</p>
             <input type="text" value={filter} onChange={handleChange} />
         </div>
