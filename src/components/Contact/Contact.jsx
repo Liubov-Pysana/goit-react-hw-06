@@ -5,12 +5,17 @@ import css from "./Contact.module.css";
 
 const Contact = ({ id, name, number }) => {
     const dispatch = useDispatch();
+    const handleDelete = () => {
+        dispatch(deleteContact(id));
+    };
+
+    console.log(name, number);
 
     return (
         <li className={css.liItem}>
             <p>Name: {name}</p>
             <p>Number: {number}</p>
-            <button className={css.deleteButton} onClick={() => dispatch(deleteContact(id))}>
+            <button className={css.deleteButton} onClick={handleDelete}>
                 Delete
             </button>
         </li>
@@ -18,18 +23,3 @@ const Contact = ({ id, name, number }) => {
 };
 
 export default Contact;
-
-// import React from "react";
-// import css from "./Contact.module.css";
-
-// export default function Contact({ id, name, number, onDelete }) {
-//     return (
-//         <li className={css.liItem}>
-//             <p>Name: {css.liName}</p>
-//             <p>Number: {number}</p>
-//             <button className={css.deleteButton} onClick={() => onDelete(id)}>
-//                 Delete
-//             </button>
-//         </li>
-//     );
-// }
